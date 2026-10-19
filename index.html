@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Shoes_sv: encuentra sneakers originales de tus marcas favoritas. Compra Adidas, Nike, Puma, Vans, Jordan y más en El Salvador.">
+  <title>Shoes_sv | Sneakers para cada paso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/storefront.css">
+  <script src="js/store.js" defer></script>
+  <script src="js/storefront.js" defer></script>
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <a class="brand-lockup" href="index.html" aria-label="Shoes_sv, inicio">
+      <img src="img/webp/logos/Shoes-SV-Icon.webp" alt="">
+      <span>SHOES <strong>SV</strong></span>
+    </a>
+    <nav class="primary-nav" aria-label="Navegación principal">
+      <a href="index.html">Inicio</a><a href="catalogo.html">Catálogo</a>
+      <a class="nav-cart" href="carrito.html">Carrito <span class="cart-count" data-cart-count>0</span></a>
+    </nav>
+  </header>
+  <main class="page-main">
+    <section class="container hero">
+      <div>
+        <p class="eyebrow">Sneakers seleccionados · El Salvador</p>
+        <h1>Encuentra tu <span class="accent-word">próximo</span> par.</h1>
+        <p>Estilo que se mueve contigo. Explora modelos icónicos de las marcas que marcan la calle.</p>
+        <a class="button" href="catalogo.html">Explorar catálogo</a>
+      </div>
+      <div class="hero-art"><img src="img/webp/catalog/W+NIKE+AIR+MAX+270.webp" alt="Nike Air Max 270 en la colección Shoes_sv" fetchpriority="high"></div>
+    </section>
+    <section class="container section-block" aria-labelledby="brandsHeading">
+      <div class="section-heading">
+        <div><p class="eyebrow">Encuentra tu marca</p><h2 id="brandsHeading">Nuestras marcas</h2></div>
+        <a class="text-link" href="catalogo.html">Ver todos los productos</a>
+      </div>
+      <div class="brand-grid" id="brandGrid"></div>
+    </section>
+    <section class="container offer-strip" aria-label="Ofertas">
+      <div class="offer-item"><strong>50% OFF</strong><p>En compras de 5 pares o más con tarjeta.</p></div>
+      <div class="offer-item"><strong>15% OFF</strong><p>En compras de 5 pares o más en efectivo.</p></div>
+      <div class="offer-item"><strong>Compra fácil</strong><p>Confirma tu pedido directamente por WhatsApp.</p></div>
+    </section>
+    <section class="container section-block" aria-labelledby="featuredHeading">
+      <div class="section-heading">
+        <div><p class="eyebrow">Selección Shoes_sv</p><h2 id="featuredHeading">En movimiento</h2></div>
+      </div>
+      <div class="feature-slide" id="featureSlide" aria-live="polite"></div>
+    </section>
+  </main>
+  <footer class="site-footer"><strong>SHOES SV</strong> · Sneakers para cada paso · El Salvador</footer>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Revisa tu selección de sneakers y prepara tu pedido Shoes_sv.">
+  <title>Carrito | Shoes_sv</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/storefront.css"><script src="js/store.js" defer></script><script src="js/storefront.js" defer></script>
+</head>
+<body data-page="cart">
+  <header class="site-header"><a class="brand-lockup" href="index.html"><img src="img/webp/logos/Shoes-SV-Icon.webp" alt=""><span>SHOES <strong>SV</strong></span></a><nav class="primary-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="catalogo.html">Catálogo</a><a class="nav-cart" href="carrito.html">Carrito <span class="cart-count" data-cart-count>0</span></a></nav></header>
+  <main class="page-main container">
+    <section class="page-intro"><p class="eyebrow">Tu selección</p><h1 class="page-title">Carrito</h1><p>Revisa tus productos, completa tus datos y envía el pedido por WhatsApp.</p></section>
+    <section class="empty-state" id="cartEmpty" hidden><h2>Tu carrito está vacío</h2><p>Encuentra tu próximo par en el catálogo.</p><a class="button" href="catalogo.html">Ir al catálogo</a></section>
+    <section class="order-success" id="orderSuccess" aria-labelledby="successTitle" hidden>
+      <p class="success-mark" aria-hidden="true">✓</p>
+      <p class="eyebrow">Pedido confirmado</p>
+      <h2 id="successTitle">¡Gracias por tu pedido!</h2>
+      <p>Tarjeta <strong id="orderPaymentBrand">Visa</strong> identificada. <strong>No se realizó ningún cobro ni se guardaron datos de tarjeta.</strong></p>
+      <p class="success-order">Número de orden: <strong id="orderNumber"></strong></p>
+      <p>Total: <strong id="orderTotal"></strong></p>
+      <a class="button" href="catalogo.html">Seguir explorando</a>
+    </section>
+    <section id="cartContent" hidden>
+      <div class="cart-layout">
+        <div class="cart-items" id="cartItems"></div>
+        <aside class="order-summary" aria-label="Resumen del pedido">
+          <h2>Resumen</h2>
+          <div class="summary-line"><span>Productos (<span id="cartQuantity">0</span>)</span><span id="cartSubtotal">$0.00</span></div>
+          <div class="summary-line"><span>Descuento</span><span id="cartDiscount">-$0.00</span></div>
+          <p class="discount-hint" id="discountHint"></p>
+          <div class="summary-line summary-total"><span>Total</span><span id="cartTotal">$0.00</span></div>
+        </aside>
+      </div>
+      <form class="checkout" id="checkoutForm" novalidate>
+        <h2>Datos para tu pedido</h2>
+        <div class="checkout-grid" id="customerFields">
+          <div class="field"><label for="customerName">Nombre completo</label><input id="customerName" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="customerEmail">Correo electrónico</label><input id="customerEmail" name="email" type="email" autocomplete="email" required></div>
+          <div class="field field-wide"><label for="customerAddress">Dirección de entrega</label><input id="customerAddress" name="address" autocomplete="street-address" required></div>
+          <div class="field"><label for="customerPhone">Teléfono</label><input id="customerPhone" name="phone" type="tel" autocomplete="tel" required></div>
+        </div>
+        <fieldset class="payment-options"><legend>Método de pago</legend><label><input type="radio" name="payment" value="card" checked> Tarjeta</label><label><input type="radio" name="payment" value="cash"> Efectivo</label></fieldset>
+        <section class="mock-card-panel" id="mockCardFields" aria-labelledby="mockCardTitle">
+          <div class="mock-card-heading">
+            <div><p class="eyebrow">Pago con tarjeta</p><h3 id="mockCardTitle">Tarjeta</h3></div>
+            <div class="payment-brand-logos" aria-label="Marcas admitidas: Visa y Mastercard">
+              <img src="img/payments/visa.svg" alt="Visa">
+              <img src="img/payments/mastercard.svg" alt="Mastercard">
+            </div>
+          </div>
+          <p class="mock-card-notice">Usa los datos de ejemplo de Visa o Mastercard. No se guardan ni se envían datos de tarjeta.</p>
+          <div class="test-card-actions">
+            <button class="button-secondary" type="button" data-test-card="4242424242424242" data-test-brand="Visa">Visa</button>
+            <button class="button-secondary" type="button" data-test-card="5555555555554444" data-test-brand="Mastercard">Mastercard</button>
+          </div>
+          <div class="checkout-grid card-fields-grid">
+            <div class="field field-wide"><label for="mockCardholder">Nombre del titular</label><input id="mockCardholder" autocomplete="off" placeholder="NOMBRE DEL TITULAR" disabled required></div>
+            <div class="field field-wide"><label for="mockCardNumber">Número de tarjeta</label><input id="mockCardNumber" type="text" inputmode="numeric" autocomplete="off" maxlength="23" placeholder="Selecciona Visa o Mastercard" aria-describedby="cardBrandStatus" disabled required></div>
+            <div class="field"><label for="mockCardExpiry">Vencimiento (MM/AA)</label><input id="mockCardExpiry" type="text" inputmode="numeric" autocomplete="off" maxlength="5" placeholder="12/27" disabled required></div>
+            <div class="field"><label for="mockCardCvc">Código de seguridad</label><input id="mockCardCvc" type="password" inputmode="numeric" autocomplete="off" maxlength="3" placeholder="123" disabled required></div>
+          </div>
+          <p class="card-brand-status" id="cardBrandStatus" aria-live="polite">Selecciona una marca para completar los valores de ejemplo.</p>
+          <p class="checkout-message" id="cardValidationMessage" aria-live="polite"></p>
+        </section>
+        <button class="button" id="checkoutSubmit" type="submit">Continuar</button>
+        <p class="checkout-message" id="checkoutMessage" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+  <footer class="site-footer"><strong>SHOES SV</strong> · Sneakers para cada paso · El Salvador</footer>
+</body>
+</html>

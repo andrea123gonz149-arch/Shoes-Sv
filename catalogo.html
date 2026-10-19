@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Explora el catálogo de Shoes_sv: sneakers Adidas, Nike, Puma, Vans, Jordan y más.">
+  <title>Catálogo | Shoes_sv</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/storefront.css"><script src="js/store.js" defer></script><script src="js/storefront.js" defer></script>
+</head>
+<body data-page="catalog">
+  <header class="site-header"><a class="brand-lockup" href="index.html"><img src="img/webp/logos/Shoes-SV-Icon.webp" alt=""><span>SHOES <strong>SV</strong></span></a><nav class="primary-nav" aria-label="Navegación principal"><a href="index.html">Inicio</a><a href="catalogo.html">Catálogo</a><a class="nav-cart" href="carrito.html">Carrito <span class="cart-count" data-cart-count>0</span></a></nav></header>
+  <main class="page-main container">
+    <section class="page-intro"><p class="eyebrow">Toda la colección</p><h1 class="page-title">Catálogo</h1><p>Explora sneakers, compara marcas y encuentra un par dentro de tu presupuesto.</p></section>
+    <div class="catalog-layout">
+      <aside class="catalog-filters" aria-label="Filtros del catálogo">
+        <div class="filter-heading"><h2>Filtrar</h2><button id="resetCatalogFilters" class="text-button" type="button">Limpiar</button></div>
+        <label class="search-field"><span>Buscar modelo o marca</span><input id="catalogSearch" type="search" placeholder="Ej. Air Force, Vans" autocomplete="off"></label>
+        <fieldset class="filter-group">
+          <legend>Marcas</legend>
+          <div id="brandFilters" class="brand-filter-list"></div>
+        </fieldset>
+        <fieldset class="filter-group">
+          <legend>Rango de precio</legend>
+          <div class="price-bands" role="group" aria-label="Seleccionar rango de precio">
+            <button type="button" data-price-band="all" aria-pressed="true">Todos</button>
+            <button type="button" data-price-band="low" aria-pressed="false">Bajos · hasta $75</button>
+            <button type="button" data-price-band="mid" aria-pressed="false">Medios · $75–$100</button>
+            <button type="button" data-price-band="high" aria-pressed="false">Altos · $100–$150</button>
+          </div>
+        </fieldset>
+        <label class="search-field budget-field"><span>Mi presupuesto máximo</span><div class="budget-input"><span>$</span><input id="budgetInput" type="number" min="0" max="10000" step="0.01" inputmode="decimal" placeholder="Ej. 95"></div></label>
+      </aside>
+      <section class="catalog-results" aria-label="Productos">
+        <div class="results-heading"><p id="catalogResults" aria-live="polite"></p><span>Selecciona un producto para ver detalles y tallas</span></div>
+        <div class="catalog-grid" id="catalogGrid"></div>
+        <p class="catalog-empty" id="catalogEmpty" hidden>No encontramos productos con esos filtros. Prueba otro precio o marca.</p>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><strong>SHOES SV</strong> · Sneakers para cada paso · El Salvador</footer>
+</body>
+</html>
